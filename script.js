@@ -11,3 +11,11 @@ function render() {
   currentEl.textContent = current;
   prevEl.textContent = operator ? `${previous} ${operator}` : "";
 }
+
+function appendNumber(n) {
+  if (justEvaluated) {
+    current = "0";
+    justEvaluated = false;
+  }
+  if (n === "." && current.includes(".")) return;
+}
