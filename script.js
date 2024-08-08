@@ -18,4 +18,6 @@ function appendNumber(n) {
     justEvaluated = false;
   }
   if (n === "." && current.includes(".")) return;
+  if (current === "0" && n !== ".") current = n;
+  else current += n;
 }
