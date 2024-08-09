@@ -21,3 +21,10 @@ function appendNumber(n) {
   if (current === "0" && n !== ".") current = n;
   else current += n;
 }
+
+function chooseOperator(op) {
+  previous = current;
+  operator = op;
+  current = "0";
+  justEvaluated = false;
+}
