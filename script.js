@@ -29,3 +29,9 @@ function chooseOperator(op) {
   current = "0";
   justEvaluated = false;
 }
+
+function compute() {
+  const a = parseFloat(previous);
+  const b = parseFloat(current);
+  if (isNaN(a) || isNaN(b) || !operator) return;
+}
