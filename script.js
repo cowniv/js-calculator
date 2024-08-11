@@ -34,4 +34,10 @@ function compute() {
   const a = parseFloat(previous);
   const b = parseFloat(current);
   if (isNaN(a) || isNaN(b) || !operator) return;
+
+  let result;
+  switch (operator) {
+    case "+": result = a + b; break;
+    case "−": result = a - b; break;
+  }
 }
