@@ -23,6 +23,7 @@ function appendNumber(n) {
 }
 
 function chooseOperator(op) {
+  if (operator && !justEvaluated) compute();
   previous = current;
   operator = op;
   current = "0";
