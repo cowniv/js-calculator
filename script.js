@@ -39,5 +39,7 @@ function compute() {
   switch (operator) {
     case "+": result = a + b; break;
     case "−": result = a - b; break;
+    case "×": result = a * b; break;
+    case "÷": result = b === 0 ? "Error" : a / b; break;
   }
 }
