@@ -49,3 +49,8 @@ function compute() {
   operator = null;
   justEvaluated = true;
 }
+
+document.querySelector(".keys").addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+});
