@@ -57,4 +57,7 @@ document.querySelector(".keys").addEventListener("click", (e) => {
   if (btn.dataset.num) appendNumber(btn.dataset.num);
   else if (btn.dataset.op) chooseOperator(btn.dataset.op);
   else if (btn.dataset.action === "equals") compute();
+  else if (btn.dataset.action === "clear") {
+    current = "0"; previous = ""; operator = null;
+  }
 });
