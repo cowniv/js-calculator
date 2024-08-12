@@ -53,4 +53,8 @@ function compute() {
 document.querySelector(".keys").addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
+
+  if (btn.dataset.num) appendNumber(btn.dataset.num);
+  else if (btn.dataset.op) chooseOperator(btn.dataset.op);
+  else if (btn.dataset.action === "equals") compute();
 });
