@@ -42,4 +42,10 @@ function compute() {
     case "×": result = a * b; break;
     case "÷": result = b === 0 ? "Error" : a / b; break;
   }
+
+  // avoid floating point noise like 0.1 + 0.2 = 0.30000000000000004
+  current = typeof result === "number" ? String(parseFloat(result.toFixed(10))) : result;
+  previous = "";
+  operator = null;
+  justEvaluated = true;
 }
