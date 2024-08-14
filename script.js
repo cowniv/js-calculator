@@ -59,5 +59,7 @@ document.querySelector(".keys").addEventListener("click", (e) => {
   else if (btn.dataset.action === "equals") compute();
   else if (btn.dataset.action === "clear") {
     current = "0"; previous = ""; operator = null;
+  } else if (btn.dataset.action === "delete") {
+    current = current.length > 1 ? current.slice(0, -1) : "0";
   }
 });
