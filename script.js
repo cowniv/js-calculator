@@ -54,6 +54,8 @@ document.querySelector(".keys").addEventListener("click", (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
 
+  if (current === "Error") current = "0";
+
   if (btn.dataset.num) appendNumber(btn.dataset.num);
   else if (btn.dataset.op) chooseOperator(btn.dataset.op);
   else if (btn.dataset.action === "equals") compute();
@@ -61,5 +63,9 @@ document.querySelector(".keys").addEventListener("click", (e) => {
     current = "0"; previous = ""; operator = null;
   } else if (btn.dataset.action === "delete") {
     current = current.length > 1 ? current.slice(0, -1) : "0";
+  } else if (btn.dataset.action === "percent") {
+    current = String(parseFloat(current) / 100);
   }
+
+  render();
 });
