@@ -75,4 +75,9 @@ const keyMap = { "/": "÷", "*": "×", "-": "−", "+": "+" };
 document.addEventListener("keydown", (e) => {
   if (/^[0-9.]$/.test(e.key)) appendNumber(e.key);
   else if (keyMap[e.key]) chooseOperator(keyMap[e.key]);
+  else if (e.key === "Enter" || e.key === "=") compute();
+  else if (e.key === "Backspace") current = current.length > 1 ? current.slice(0, -1) : "0";
+  else if (e.key === "Escape") { current = "0"; previous = ""; operator = null; }
+  else return;
+  render();
 });
