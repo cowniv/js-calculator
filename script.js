@@ -69,3 +69,10 @@ document.querySelector(".keys").addEventListener("click", (e) => {
 
   render();
 });
+
+// keyboard support
+const keyMap = { "/": "÷", "*": "×", "-": "−", "+": "+" };
+document.addEventListener("keydown", (e) => {
+  if (/^[0-9.]$/.test(e.key)) appendNumber(e.key);
+  else if (keyMap[e.key]) chooseOperator(keyMap[e.key]);
+});
