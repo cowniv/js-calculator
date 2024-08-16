@@ -81,3 +81,5 @@ document.addEventListener("keydown", (e) => {
   else return;
   render();
 });
+
+render();
